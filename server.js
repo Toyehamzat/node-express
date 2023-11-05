@@ -1,5 +1,6 @@
-const { format } = require("date-fns");
+const express = require("express");
+const app = express();
+const path = require("path");
+const PORT = process.env.PORT || 3000;
 
-console.log(format(new Date(), "yyyy-MM-dd"));
-
-console.log("hello world!");
+app.listen(PORT, () => console.log(` Server is running on ${PORT}`));
