@@ -1,0 +1,31 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "playground",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toyehamzat/node-express.git"
+  },
+  "keywords": [
+    "Timilehin@04"
+  ],
+  "author": "toye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Toyehamzat/node-express/issues"
+  },
+  "homepage": "https://github.com/Toyehamzat/node-express#readme",
+  "dependencies": {
+    "date-fns": "^2.30.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
