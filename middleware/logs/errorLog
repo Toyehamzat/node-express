@@ -1,0 +1,16 @@
+20231110	11:57:34	d2d038f9-633c-47c5-bca3-aca019dc780c	not allowed CORS origin 	Error: not allowed CORS origin 
+    at origin (C:\Users\user\Documents\Projects\node-express\server.js:22:16)
+    at C:\Users\user\Documents\Projects\node-express\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (C:\Users\user\Documents\Projects\node-express\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (C:\Users\user\Documents\Projects\node-express\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (C:\Users\user\Documents\Projects\node-express\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\user\Documents\Projects\node-express\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\user\Documents\Projects\node-express\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\user\Documents\Projects\node-express\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\user\Documents\Projects\node-express\node_modules\express\lib\router\index.js:280:10)
+    at logger (C:\Users\user\Documents\Projects\node-express\middleware\logEvents.js:26:3)
+20231112	04:21:48	de6cbcb2-d360-44cb-a3f2-90c36a66e5f2	ENOENT: no such file or directory, stat 'C:\Users\user\Documents\Projects\node-express\views\subdir\text.html'	Error: ENOENT: no such file or directory, stat 'C:\Users\user\Documents\Projects\node-express\views\subdir\text.html'
+20231112	04:22:47	bdb123b6-e8c0-4d86-a6bb-f44a00a14aaa	ENOENT: no such file or directory, stat 'C:\Users\user\Documents\Projects\node-express\views\subdir\text.html'	Error: ENOENT: no such file or directory, stat 'C:\Users\user\Documents\Projects\node-express\views\subdir\text.html'
+20231112	04:23:11	be9f1ac4-596c-450f-9f17-a06bf7581dbf	ENOENT: no such file or directory, stat 'C:\Users\user\Documents\Projects\node-express\views\subdir\text.html'	Error: ENOENT: no such file or directory, stat 'C:\Users\user\Documents\Projects\node-express\views\subdir\text.html'
+20231112	04:24:59	e8504844-50e7-473d-acf5-a70a49e2ce88	ENOENT: no such file or directory, stat 'C:\Users\user\Documents\Projects\node-express\views\subdir\text.html'	Error: ENOENT: no such file or directory, stat 'C:\Users\user\Documents\Projects\node-express\views\subdir\text.html'
+20231112	04:32:46	c5e99683-347f-496c-b546-c5c3721463f8	ENOENT: no such file or directory, stat 'C:\Users\user\Documents\Projects\node-express\routes\views\index.html'	Error: ENOENT: no such file or directory, stat 'C:\Users\user\Documents\Projects\node-express\routes\views\index.html'
