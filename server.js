@@ -33,10 +33,10 @@ app.use(express.json());
 // built-in middleware to handle static requests
 app.use("/*", express.static(path.join(__dirname, "/public")));
 app.use("/subdir", express.static(path.join(__dirname, "/public")));
-
 //routes handling
 app.use("/", require("./routes/roots"));
 app.use("/subdir", require("./routes/subdir"));
+app.use("/employees", require("./routes/api/employees"));
 
 app.all("*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
