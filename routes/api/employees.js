@@ -1,8 +1,19 @@
 const express = require("express");
-const router = express.router();
-const path = require("path");
-const data = {};
+const {
+  getAllEmployees,
+  createNewEmployees,
+  updateEmployee,
+  deleteEmployee,
+  getEmployee,
+} = require("../../controllers/employeeController");
+const router = express.Router();
 
-data.employees = require("../../data/employees.json");
+router
+  .route("/")
+  .get(getAllEmployees)
+  .post(createNewEmployees)
+  .put(updateEmployee)
+  .delete(deleteEmployee);
 
+router.route("/:id").get(getEmployee);
 module.exports = router;
