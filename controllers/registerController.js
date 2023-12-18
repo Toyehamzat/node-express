@@ -1,12 +1,4 @@
-const usersDB = {
-  users: require("../model/users.json"),
-  setUsers: function (data) {
-    this.users = data;
-  },
-};
-
-const fsPromises = require("fs").promises;
-const path = require("path");
+const User = require("../model/User");
 const bcrypt = require("bcrypt");
 
 const handleNewUser = async (req, res) => {
@@ -14,23 +6,25 @@ const handleNewUser = async (req, res) => {
   if (!user || !pwd)
     return res
       .status(400)
-      .json({ message: "username or password not provided" });
-  // checking for duplicate username
-  const duplicate = usersDB.users.find((person) => person.username === user);
-  if (duplicate)
-    return res.status(409).json({ message: "username already in use" }); // status code 409 means conflict
+      .json({ message: "Username and password are required." });
+
+  // check for duplicate usernames in the db
+  const duplicate = await User.findOne({ username: user }).exec();
+  if (duplicate) return res.sendStatus(409); //Conflict
+
   try {
-    //encrypt pwd
-    const hashedPassword = await bcrypt.hash(pwd, 10);
-    //store new user
-    const NewUser = { username: user, password: hashedPassword };
-    usersDB.setUsers([...usersDB.users, NewUser]);
-    await fsPromises.writeFile(
-      path.join(__dirname, "..", "model", "users.json"),
-      JSON.stringify(usersDB.users)
-    );
-    console.log(usersDB.users);
-    res.status(201).json({ success: `new user ${user} created` });
+    //encrypt the password
+    const hashedPwd = await bcrypt.hash(pwd, 10);
+
+    //create and store the new user
+    const result = await User.create({
+      username: user,
+      password: hashedPwd,
+    });
+
+    console.log(result);
+
+    res.status(201).json({ success: `New user ${user} created!` });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
